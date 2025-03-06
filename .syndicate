@@ -1,0 +1,6 @@
+name: aws
+build_projects_mapping:
+  nodejs: app
+lambdas:
+  hello_world_999:
+    runtime: nodejs

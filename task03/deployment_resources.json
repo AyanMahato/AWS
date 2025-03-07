@@ -34,13 +34,6 @@
     "resource_type": "iam_role",
     "tags": {}
   },
-  "hello": {
-    "resource_type": "api_gateway",
-    "deploy_stage": "api",
-    "dependencies": [],
-    "resources": {},
-    "tags": {}
-  },
   "task3_api": {
     "resource_type": "api_gateway",
     "deploy_stage": "api",

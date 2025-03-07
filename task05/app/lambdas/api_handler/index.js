@@ -1,49 +1,49 @@
 const AWS = require('aws-sdk');
-const uuid = require('uuid'); // For generating unique UUIDs
-const dynamoDb = new AWS.DynamoDB.DocumentClient(); // DynamoDB DocumentClient
+const uuid = require('uuid'); // To generate a unique UUID for the event
+const dynamoDb = new AWS.DynamoDB.DocumentClient(); // Initialize DynamoDB DocumentClient
 
 exports.handler = async (event) => {
-    // Parse the body from the incoming event
+    // Parse the body of the incoming request
     const body = JSON.parse(event.body);
-    const principalId = body.principalId;
-    const content = body.content;
+    const principalId = body.principalId;  // Get the principalId from the request body
+    const content = body.content; // The content map in the request body
 
-    // Generate a unique UUID for the event
+    // Generate a UUID for the event's 'id' field
     const id = uuid.v4();
 
-    // Get the current date/time in ISO 8601 format
+    // Get the current timestamp in ISO 8601 format
     const createdAt = new Date().toISOString();
 
-    // Construct the event data to be stored in DynamoDB
+    // Prepare the event object to store in DynamoDB
     const eventItem = {
         id: id,
         principalId: principalId,
         createdAt: createdAt,
-        body: content
+        body: content // The content of the event
     };
 
-    // Define DynamoDB parameters to insert the new event
+    // Define the parameters for the DynamoDB 'put' operation
     const params = {
-        TableName: 'Events', // DynamoDB table name
+        TableName: 'Events', // The name of the DynamoDB table
         Item: eventItem // The event data
     };
 
     try {
-        // Put the event into DynamoDB
+        // Put the event data into the DynamoDB table
         await dynamoDb.put(params).promise();
 
-        // Return a successful response with the event data
+        // Return the success response with the created event
         return {
-            statusCode: 201,
+            statusCode: 201,  // Status code for successful creation
             body: JSON.stringify({
-                event: eventItem // The created event data
+                event: eventItem // Return the created event in the response
             })
         };
     } catch (error) {
-        // Handle errors and return an error response
+        // Log and return an error response if something goes wrong
         console.error('Error saving event to DynamoDB', error);
         return {
-            statusCode: 500,
+            statusCode: 500,  // Internal server error status code
             body: JSON.stringify({
                 message: 'Failed to save event to DynamoDB',
                 error: error.message

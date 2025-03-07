@@ -1,0 +1,17 @@
+account_id: '196241772369'
+deploy_target_bucket: syndicate-education-platform-custom-sandbox-artifacts-sbox01/7fc1421c/task04
+expiration: 2025-03-07 12:43:38.209681+00:00
+extended_prefix_mode: true
+iam_permissions_boundary: arn:aws:iam::196241772369:policy/eo_role_boundary
+project_path: C:\Users\ayankumar_mahato\Documents\AWS\AWS
+region: eu-central-1
+resources_prefix: cmtr-7fc1421c-
+tags:
+  run_id: JAP-08
+  run_type: stm
+  type: user
+  user_id: 7fc1421c
+temp_aws_access_key_id: ASIAS3MHLZ5I7FWSO3S2
+temp_aws_secret_access_key: XxLWf4DyHnfvT43ayEfu++01Zcyux9d8bgzBUvBB
+temp_aws_session_token: IQoJb3JpZ2luX2VjEPz//////////wEaCXVzLWVhc3QtMSJGMEQCIDRlXLkcEDaUTeI+1GUoRzLqYsg8GJnZCf9rUjcjpl4VAiB1snywgKdRlKpeqoq1QLcJKCDwjcEWM8vXyyVgiE1mYiraAghFEAEaDDE5NjI0MTc3MjM2OSIMfWTAObiRkKKI5uagKrcC/3vGwZg6yBFurnms1WQq1n1C7pdbQa15ewryCQtbkh/h7yevvexxYHtrDpjl8LLGKoSO6XU4ono/o/YVI1WUgXgembTo66cdqw7i0PYwRsboIiRjoP5tjQdxXVg9Dtqfes6maxrhD9kyRYrmMXZP8rP3T5f75KcUb1fd8v6XDq+AU3fXE0/Xmp4JeX1ZXCTGNTQUQ5SCEa25yJwvQDE24KvMBYl520AnsbAj4Fg+/nonvA7Vd/6zKCVuO+bIPRAiaMaBh+dy+W83GOBg5YPADh/JfRasDDWa8WQJp3K2MCgRULuI5HMPpZaJ7agjcD5K81ZuKhxU67Fd2e6XNnutBmXVdzVTAzyKs5UDxL6QnOKrz6OAlRcuX4ApoAQ5rAa4h29fKMxn/WBT6SsUeWxn2HRzuLdm070wt7yrvgY6ngHLpZeasGbPsTInvp12kcIysHBs02phYYxcKf/+4hMsbzns83WikPCUEwOUrGo71PT0dYER8MvAVuhTtJVg3Eoq1wMdExId5FNahLl7ojIpYNP4J/eglTPA2GuBYuWbqjfhV8KdjLeizc+PE9Jlevd10Z/K81smdBgf3p8E4VtqWwzVKJG58kOfWIjPZb1jzccehADivfZsqWa6Xy9xwQ==
+use_temp_creds: false

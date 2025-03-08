@@ -14,7 +14,8 @@
             "dynamodb:DeleteItem",
             "ssm:PutParameter",
             "ssm:GetParameter",
-            "kms:Decrypt","dynamodb:GetItem",
+            "kms:Decrypt",
+            "dynamodb:GetItem",
             "dynamodb:Query",
             "dynamodb:PutItem",
             "dynamodb:Batch*",
@@ -47,7 +48,6 @@
       "/events": {
         "enable_cors": false,
         "POST": {
-          "enable_proxy": true,
           "authorization_type": "NONE",
           "integration_type": "lambda",
           "lambda_name": "api_handler",
@@ -60,6 +60,16 @@
         }
       }
     },
+    "tags": {}
+  },
+  "Events": {
+    "resource_type": "dynamodb_table",
+    "hash_key_name": "id",
+    "hash_key_type": "S",
+    "read_capacity": 1,
+    "write_capacity": 1,
+    "global_indexes": [],
+    "autoscaling": [],
     "tags": {}
   }
 }

@@ -3,12 +3,11 @@ const uuid = require('uuid');
 const dynamoDb = new AWS.DynamoDB.DocumentClient();
 
 exports.handler = async (event) => {
-    // Log the received event for debugging
     console.log('Received event:', JSON.stringify(event, null, 2));
 
     let body;
     try {
-        body = JSON.parse(event.body);  // Parsing event body
+        body = JSON.parse(event.body);
     } catch (err) {
         console.error('Error parsing event body:', err);
         return {
@@ -22,7 +21,6 @@ exports.handler = async (event) => {
 
     const { principalId, content } = body;
 
-    // Check for missing required fields
     if (!principalId || !content) {
         console.error('Missing required fields: principalId or content');
         return {
@@ -50,7 +48,6 @@ exports.handler = async (event) => {
 
     try {
         await dynamoDb.put(params).promise();
-        // Log the event item after saving
         console.log('Event saved:', JSON.stringify(eventItem, null, 2));
 
         return {
